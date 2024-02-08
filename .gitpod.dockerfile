@@ -1,3 +1,3 @@
 FROM orkunergun/docker:ubuntu
 
-RUN sudo su && cd / && mkdir bin && PATH=bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > bin/repo && chmod a+x bin/repo && repo init -u https://github.com/CipherOS/android_manifest.git -b twelve && repo sync
+RUN sudo su && cd / && PATH=bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > bin/repo && chmod a+x bin/repo && repo init -u https://github.com/CipherOS/android_manifest.git -b twelve && repo sync
