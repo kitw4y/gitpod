@@ -1,5 +1,6 @@
 FROM orkunergun/docker:ubuntu
 
-# Change Shell to ZSH
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-CMD [ "zsh && source ~/.zshrc" ]
+RUN sudo apt-get update \
+ && sudo apt-get install -y \
+    tool \
+ && mkdir bin && PATH=bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > bin/repo && chmod a+x bin/repo && repo init -u https://github.com/CipherOS/android_manifest.git -b twelve && repo sync
